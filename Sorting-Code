@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int i=0, j=0, temp=0, arr[10], k=0;
+	cout<<"Please enter 10 numbers."<<endl;
+	for (k; k<10; k++)
+	{
+		cout<<k<<"th number =";
+		cin>>arr[k];
+	}
+	for (i=0;i<10;i++)
+	{
+		for(j=0; j<10; j++)
+		if (arr[j]<=arr[j-1])
+		{
+			temp=arr[j];
+			arr[j]=arr[j-1];
+			arr[j-1]=temp;
+		}
+		if (arr[j]>arr[j+1])
+		{
+			temp=arr[j];
+			arr[j]=arr[j+1];
+			arr[j+1]=temp;
+		}
+	}
+	for (k=0; k<10; k++)
+		cout<<arr[k]<<"\t";
+}
