@@ -1,0 +1,56 @@
+#include<iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int main()
+{
+	int i=0, j=0, k=0, length=0, sum=0, temp=0;
+	cout<<"Please enter the length of the array."<<endl;
+	while (true)
+	{
+		cout<<"Array length= ";
+		cin>>length;
+		if(length>10 || length<=0)
+		{
+			cout<<"Enter a number less than ten or more than zero."<<endl;
+		}
+		else
+			break;
+	}
+	int arr[length];
+	srand(time(0));
+	for (k=0; k<length; k++)
+	{
+		arr[k]=rand()%9+1;
+	}
+	for (i=0;i<length;i++)
+	{
+		for(j=0; j<length; j++)
+		if (arr[j]<=arr[j-1])
+		{
+			temp=arr[j];
+			arr[j]=arr[j-1];
+			arr[j-1]=temp;
+		}
+		if (arr[j]>arr[j+1])
+		{
+			temp=arr[j];
+			arr[j]=arr[j+1];
+			arr[j+1]=temp;
+		}
+	}
+	for (i=1; i<length; i++)
+	{
+		for (j=0; j<=i; j++)
+		{
+			sum=sum+arr[j];
+		}
+	}
+	cout<<"Your work time packet: ";
+	for (k=0; k<length; k++)
+	{
+		cout<<arr[k]<<"\t";
+	}
+	cout<<endl<<"Your total shortest working time: "<<sum;	
+}
