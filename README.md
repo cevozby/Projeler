@@ -1,4 +1,23 @@
 # Sorting-Algorithm
+Big O() nedir:
+Basit bir şekilde matematiksel olarak anlatmaya çalışırsak f ve g fonksiyonları reel sayı olursa;
+
+f(x) fonksiyonu c ve k sabit olmak üzere büyük O fonksiyonu O(g(x)) şeklinde tanımlanır.
+
+•|f(x)| ≤ c|g(x)|+k
+
+x > k olmalı.
+
+Big O() nasıl hesaplanır:
+O(1);
+Büyüme sayısı 1'dir. Sadece tek seferlik çalışan herhangi bir döngü içermeyen yazılımlardır. (Örneğin if komutu.)
+O(n);
+n elemanlı bir döngü, n kere döndüğü için n kez işlem yapar. Başka döngülerin bulunmadığı durumdur.
+O(n^c);
+n eleman sayısı c ise iç içe döngü sayısıdır. İç içe iki döngüden oluşuyosa O(n^2) olur. Karıştırılmaması gereken husus eğer döngüler iç içe değilse n elemanlı bir döngü ve m elemanlı başka bir döngü varsa O(n+m) olur.
+O(logn);
+Eğer döngü içerisinde sürekli bölme veya çarpma işlemi yapılıyorsa log(n) karmaşıklığı oluşur.
+
 SORTİNG
 
 Seçerek Sıralama: Big O(n^2)
